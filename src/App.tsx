@@ -1,37 +1,28 @@
-import React, { PureComponent } from 'react';
-import logo from './logo.svg';
-import * as styles from './App.less';
+import * as React from "react";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+import renderRoutes from "./router/renderRoutes";
+import router from "./router/router";
 
-interface AppProps {
-
+export interface Props {
 }
 
-interface AppState {
-  title: object;
+interface State {
 }
-class App extends PureComponent<AppProps, AppState> {
 
-  state = {
-    title: {
-      label: '测试一'
-    }
-  }
+class App extends React.PureComponent<Props, State> {
 
-  handlerCheck = () => {
-    const title = JSON.parse(JSON.stringify(this.state.title));
-    title.label = title.label == '切换' ? '测试一' : '切换';
-    this.setState({
-      title
-    })
-  }
+  state = {}
 
   render() {
-    const { title } = this.state;
     return (
-      <div className={styles.App}>
-        <p onClick={this.handlerCheck}>{title.label}</p>
+      <div>
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <Router>
+            {renderRoutes(router)}
+          </Router>
+        </React.Suspense>
       </div>
-    )
+    );
   }
 }
 
