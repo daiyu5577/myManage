@@ -1,6 +1,7 @@
 import * as React from "react";
 
-export interface Props {
+interface Props {
+  history: any
 }
 
 interface State {
@@ -15,12 +16,16 @@ class UserInfo extends React.Component<Props, State> {
     };
   }
 
+  handlerToUserList = () => {
+    const { history } = this.props;
+    history.push({ pathname: '/home/userList' })
+  }
 
   render() {
     const { msg } = this.state;
 
     return (
-    <div>{msg}</div>
+    <div onClick={this.handlerToUserList}>{msg}</div>
     );
   }
 }
