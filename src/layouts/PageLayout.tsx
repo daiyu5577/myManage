@@ -4,7 +4,7 @@ import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/i
 import menus from '../router/menus';
 import renderRoutes from "../router/renderRoutes";
 import routes from "../router/routes";
-import "./PageLayout.less"
+import style from "./PageLayout.less"
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -26,7 +26,7 @@ export default class PageLayout extends React.PureComponent<Props, State> {
   render() {
     const { children } = this.props;
     return (
-      <Layout>
+      <Layout className={style.layout}>
         <Sider
           breakpoint="lg"
           collapsedWidth="0"
