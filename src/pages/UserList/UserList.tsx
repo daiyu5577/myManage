@@ -18,7 +18,7 @@ class UserList extends React.Component<Props, State> {
 
   handlerToUserInfo = () => {
     const { history } = this.props;
-    history.push({ pathname: '/home/userInfo' })
+    history.push({ pathname: '/user/userInfo' })
   }
 
   render() {

@@ -32,13 +32,13 @@ export default class PageLayout extends React.PureComponent<Props, State> {
           collapsedWidth="0"
         >
           <div className="logo" >logo</div>
-          <Menu onClick={this.handleChooseItem} theme="dark" mode="inline" defaultOpenKeys={['user']} defaultSelectedKeys={['/home/userList']}>
+          <Menu onClick={this.handleChooseItem} theme="dark" mode="inline" defaultOpenKeys={['user']} defaultSelectedKeys={['/user/userList']}>
             {
-              menus.map(menu => (
+              menus.map((menu: any) => (
                 menu.routes ?
                   <SubMenu key={menu.key} icon={<UserOutlined />} title={menu.title}>
                     {
-                      menu.routes.map(val => <Menu.Item key={val.path}>{val.title}</Menu.Item>)
+                      menu.routes.map((val: any) => <Menu.Item key={val.path}>{val.title}</Menu.Item>)
                     }
                   </SubMenu> :
                   <Menu.Item key={menu.path} icon={<UserOutlined />}>{menu.title}</Menu.Item>

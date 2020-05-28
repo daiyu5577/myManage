@@ -2,19 +2,19 @@ import * as React from "react";
 
 const routes = [
   {
-    path: "/home/userList",
+    path: "/user/userList",
     component: React.lazy(() => import('@pages/UserList')),
     requiresAuth: true,
   },
   {
-    path: "/home/userInfo",
+    path: "/user/userInfo",
     component: React.lazy(() => import('@pages/UserInfo')),
     requiresAuth: true,
   },
   {
     path: "/",
     exact: true,
-    redirect: '/home/userList',
+    redirect: '/user/userList',
   },
 ]
 
