@@ -1,6 +1,7 @@
 import * as React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import PageLayout from "./layouts/PageLayout"
+import Loading from "@components/Loading"
 
 export interface Props {
 }
@@ -14,7 +15,7 @@ class App extends React.PureComponent<Props, State> {
 
   render() {
     return (
-      <React.Suspense fallback={<div>Loading...</div>}>
+      <React.Suspense fallback={<Loading />}>
         <Router>
           <Route path="/" component={PageLayout}></Route>
         </Router>

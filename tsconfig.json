@@ -21,7 +21,8 @@
     "jsx": "react",
     "paths": {
       "@pages/*": ["./src/pages/*"],
-      "@router/*": ["./src/router/*"]
+      "@router/*": ["./src/router/*"],
+      "@components/*": ["./src/components/*"]
     }
   },
   "include": [

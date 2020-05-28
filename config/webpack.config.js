@@ -298,7 +298,8 @@ module.exports = function (webpackEnv) {
         }),
         ...(modules.webpackAliases || {}),
         '@pages': path.resolve(__dirname, '../src/pages').replace(/\\/g, '/'),
-        '@router': path.resolve(__dirname, '../src/router').replace(/\\/g, '/')
+        '@router': path.resolve(__dirname, '../src/router').replace(/\\/g, '/'),
+        '@components': path.resolve(__dirname, '../src/components').replace(/\\/g, '/'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
