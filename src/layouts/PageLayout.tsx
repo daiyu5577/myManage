@@ -3,7 +3,7 @@ import { Layout, Menu } from 'antd';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import menus from '../router/menus';
 import renderRoutes from "../router/renderRoutes";
-import router from "../router/router";
+import routes from "../router/routes";
 import "./PageLayout.less"
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -50,7 +50,7 @@ export default class PageLayout extends React.PureComponent<Props, State> {
           <Header className="site-layout-sub-header-background" style={{ padding: 0 }} />
           <Content style={{ margin: '24px 16px 0' }}>
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-              {renderRoutes(router)}
+              {renderRoutes(routes)}
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>console ©2020 Created by daiyu</Footer>

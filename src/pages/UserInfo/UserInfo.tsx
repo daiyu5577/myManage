@@ -1,4 +1,5 @@
 import * as React from "react";
+import style from "./UserInfo.less"
 
 interface Props {
   history: any
@@ -25,7 +26,7 @@ class UserInfo extends React.Component<Props, State> {
     const { msg } = this.state;
 
     return (
-    <div onClick={this.handlerToUserList}>{msg}</div>
+    <div className={style.userInfo} onClick={this.handlerToUserList}>{msg}</div>
     );
   }
 }
