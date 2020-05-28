@@ -1,9 +1,10 @@
 import * as React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Loading from "@components/Loading";
 import PageLayout from "./layouts/PageLayout"
-import Loading from "@components/Loading"
+const Login = React.lazy(() => import('@pages/Login'));
 
-export interface Props {
+interface Props {
 }
 
 interface State {
@@ -17,7 +18,10 @@ class App extends React.PureComponent<Props, State> {
     return (
       <React.Suspense fallback={<Loading />}>
         <Router>
-          <Route path="/" component={PageLayout}></Route>
+          <Switch>
+            <Route path="/login" exact={true} component={Login}></Route>
+            <Route path="/" component={PageLayout}></Route>
+          </Switch>
         </Router>
       </React.Suspense>
     );
