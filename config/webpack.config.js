@@ -504,7 +504,7 @@ module.exports = function (webpackEnv) {
                 {
                   loader: 'style-resources-loader',
                   options: {
-                    patterns: path.resolve(__dirname, '../src/common/css/variables.less').replace(/\\/g, '/')
+                    patterns: path.resolve(__dirname, '../src/assets/css/variables.less').replace(/\\/g, '/')
                   }
                 }
               ],
