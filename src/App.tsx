@@ -1,18 +1,15 @@
-import * as React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Loading from "@components/Loading";
-import PageLayout from "./layouts/PageLayout"
+import * as React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Loading from '@components/Loading';
+import PageLayout from './layouts/PageLayout';
 const Login = React.lazy(() => import('@pages/Login'));
 
-interface Props {
-}
+interface Props {}
 
-interface State {
-}
+interface State {}
 
 class App extends React.PureComponent<Props, State> {
-
-  state = {}
+  state = {};
 
   render() {
     return (

@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import { Spin } from 'antd';
 
 interface style {
@@ -12,15 +12,21 @@ const style: style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-}
+};
 
 function Loading(props: any) {
   return (
     <div style={style}>
-      <Spin style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+      <Spin
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+        }}
+      />
     </div>
-  )
+  );
 }
 
-
-export default React.memo(Loading)
+export default React.memo(Loading);

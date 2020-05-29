@@ -1,8 +1,8 @@
-import * as React from "react";
-import style from "./UserInfo.less"
+import * as React from 'react';
+import style from './UserInfo.less';
 
 interface Props {
-  history: any
+  history: any;
 }
 
 interface State {
@@ -13,20 +13,22 @@ class UserInfo extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      msg: '我是----用户详情'
+      msg: '我是----用户详情',
     };
   }
 
   handlerToUserList = () => {
     const { history } = this.props;
-    history.push({ pathname: '/user/userList' })
-  }
+    history.push({ pathname: '/user/userList' });
+  };
 
   render() {
     const { msg } = this.state;
 
     return (
-    <div className={style.userInfo} onClick={this.handlerToUserList}>{msg}</div>
+      <div className={style.userInfo} onClick={this.handlerToUserList}>
+        {msg}
+      </div>
     );
   }
 }

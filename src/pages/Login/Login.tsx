@@ -1,29 +1,24 @@
-import * as React from "react";
+import * as React from 'react';
 
 interface Props {
-  history: any
+  history: any;
 }
 
-interface State {
-}
+interface State {}
 
 class Login extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
   }
 
   handlerToUserList = () => {
     const { history } = this.props;
-    history.push({ pathname: '/user/userList' })
-  }
+    history.push({ pathname: '/user/userList' });
+  };
 
   render() {
-
-    return (
-      <div>登录</div>
-    );
+    return <div>登录</div>;
   }
 }
 
