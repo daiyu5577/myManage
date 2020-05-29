@@ -5,9 +5,9 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from '@ant-design/icons';
-import menus from '../router/menus';
-import renderRoutes from '../router/renderRoutes';
-import routes from '../router/routes';
+import menus from '@router/menus';
+import renderRoutes from '@router/renderRoutes';
+import routes from '@router/routes';
 import style from './PageLayout.less';
 
 const { Header, Content, Footer, Sider } = Layout;
