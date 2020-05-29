@@ -301,6 +301,7 @@ module.exports = function (webpackEnv) {
         '@router': path.resolve(__dirname, '../src/router').replace(/\\/g, '/'),
         '@components': path.resolve(__dirname, '../src/components').replace(/\\/g, '/'),
         '@utils': path.resolve(__dirname, '../src/utils').replace(/\\/g, '/'),
+        "@assets": path.resolve(__dirname, '../src/assets').replace(/\\/g, '/'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
