@@ -1,5 +1,5 @@
 import initialState, { defInitialState } from './state';
-import { UPDATA_LIST } from './actionTypes';
+import * as types from './actionTypes';
 
 interface defAction {
   readonly type: string;
@@ -11,7 +11,7 @@ export default function userReduce(
   action: defAction
 ) {
   switch (action.type) {
-    case UPDATA_LIST:
+    case types.UPDATA_LIST:
       return Object.assign({}, state, {
         list: action.payload,
       });
