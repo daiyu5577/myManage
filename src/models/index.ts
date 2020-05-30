@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from 'react-redux';
+import { createStore, combineReducers } from 'redux';
 import userReduce from './user/reduce';
 
 const allReducers = combineReducers({

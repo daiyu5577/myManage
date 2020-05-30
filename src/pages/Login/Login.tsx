@@ -29,7 +29,9 @@ function mapStateToProps(dispatch: DispatchProp, ownProps: any): any {
 
 function mapStateToState(state: any): any {
   console.log('state', state);
+  return {
+    userState: state.user,
+  };
 }
 
-console.log(111, connect(mapStateToProps, mapStateToState)(Login));
-export default connect(mapStateToProps, mapStateToState)(Login);
+export default connect(mapStateToState, mapStateToProps)(Login);
