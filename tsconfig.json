@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "baseUrl": ".",
     "target": "es5",
     "lib": [
@@ -24,6 +25,7 @@
       "@router/*": ["./src/router/*"],
       "@components/*": ["./src/components/*"],
       "@utils/*": ["./src/utils/*"],
+      "@assets/*": ["./src/assets/*"]
     }
   },
   "include": [

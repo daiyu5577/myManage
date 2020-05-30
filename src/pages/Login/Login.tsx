@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { connect, DispatchProp } from 'react-redux';
 
 interface Props {
   history: any;
@@ -22,4 +23,15 @@ class Login extends React.Component<Props, State> {
   }
 }
 
-export default Login;
+function mapStateToProps(dispatch: DispatchProp, ownProps: any): any {
+  console.log('dispatch', dispatch);
+}
+
+function mapStateToState(state: any): any {
+  console.log('state', state);
+  return {
+    userState: state.user,
+  };
+}
+
+export default connect(mapStateToState, mapStateToProps)(Login);
