@@ -25,6 +25,7 @@ class Login extends React.Component<Props, State> {
 
 function mapStateToProps(dispatch: DispatchProp, ownProps: any): any {
   console.log('dispatch', dispatch);
+  return {};
 }
 
 function mapStateToState(state: any): any {
