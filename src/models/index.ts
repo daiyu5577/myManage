@@ -1,7 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import userReduce from './user/reduce';
-import userAction from './user/action';
+
+/**
+ * @description 注意reudex使用
+ *              1：目录结构约定以（例：user）的目录结构。目录建好后，会自动引入reduce和action并注册
+ */
 
 interface defReducesMap {
   [key: string]: any;
