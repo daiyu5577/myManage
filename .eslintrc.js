@@ -19,7 +19,7 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
-    '@typescript-eslint/indent': ["error", 2],
+    '@typescript-eslint/indent': 'off',
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
