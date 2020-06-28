@@ -15,6 +15,10 @@ export default function userReduce(
       return Object.assign({}, state, {
         list: action.payload,
       });
+    case types.UPDATA_LOGINUSER:
+      return Object.assign({}, state, {
+        loginInfo: action.payload,
+      });
     default:
       return state;
   }
