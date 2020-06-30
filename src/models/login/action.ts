@@ -7,7 +7,7 @@ export function* loginIn(actions: any) {
     console.log(actions,'pd--actions');
     const response = yield call(LoginIn, actions.payload)
     yield put({type: 'LOGIN_SUCCESS', response})
-    if(response.code==200){
+    if(response && response.code==200){
     }
   } catch(e) {
 	  console.log(e, 'pd--e');
