@@ -2,8 +2,9 @@ import * as React from 'react';
 import { Dispatch } from 'redux';
 import { connect, DispatchProp } from 'react-redux';
 import { Form, Input, Button, Checkbox } from 'antd';
-import style from './Login.less';
-import { loginIn } from '../../models/login/action';
+import Example from  './components/example'
+import style from './Login.less'
+import {loginIn} from '../../models/login/action'
 interface Props {
   history: any;
   loginIn: any;
@@ -11,12 +12,61 @@ interface Props {
 }
 
 interface State {}
+interface  SquareConfig  {
+  color?: string;
+  width?: number;
+  size: number;
+  [propName: string]: any;
+}
+type SquareConfig2 = Readonly<SquareConfig>
+let arr: any[] = ['1', '2', '3', '4'];
+let ro: ReadonlyArray<string> = arr;
+// ro[5] = 10; // error
+// arr = ro; // error
+arr[5] = 10
+arr = ro as string[] 
+arr[5] = 'zs'
+
+
+const createSquare = (config: SquareConfig)=>{
+  let newSquare = { size: 10} as SquareConfig2;
+  let square: SquareConfig2 = {size: 100}
+  if (config.color) {
+    // newSquare.color = config.color;  // Error, Cannot assign to 'color' because it is a read-only property.ts
+  }
+  if (config.size) {
+    // square.height = config.color; // error; square是只读的
+  }
+  if (config.width) {
+    // newSquare.width = config.width * config.width; // Error, Cannot assign to 'width' because it is a read-only property.ts
+  }
+  return newSquare;
+}
+
+
+interface  arrConfig {
+  forEach: any;
+  [index: number]: any
+}
+
+let myArr: arrConfig= ['张三',  '李四', {name: '王五'}]
+
+myArr.forEach((el: string, index: number) => {
+  // console.log(index,'pd--index');
+});
+
+
+
+
 
 class Login extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {};
   }
+
+
+
 
   handlerToUserList = () => {
     const { history } = this.props;
@@ -28,7 +78,7 @@ class Login extends React.Component<Props, State> {
     // 直接调用即可
     const { dispatch } = this.props;
     dispatch({
-      type: 'UPDATA_LOGINUSER',
+      type: 'LOGIN_IN',
       payload: values,
     });
   };
@@ -88,6 +138,7 @@ class Login extends React.Component<Props, State> {
             </Form.Item>
           </Form>
         </div>
+        <Example name={'李四'}/>
       </div>
     );
   }
