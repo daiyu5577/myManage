@@ -2,51 +2,58 @@
 	margin: 0;
 	padding: 0;
 }
-/*清除浏览器默认样式*/
-input[type=number] {
-	-moz-appearance: textfield;
-}            
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
-}
-
 .warp {
 	position: relative;
-	margin: 50px;
+	margin: 50px auto;
 	width: 315px;
+	/*清除浏览器默认样式*/
+	input[type=number] {
+		-moz-appearance: textfield;
+	}            
+	input[type=number]::-webkit-inner-spin-button,
+	input[type=number]::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 323px;
+		height: 40px;
+		background: transparent;
+		border: none;
+		letter-spacing: 52px;
+		padding-left: 25px;
+		outline: none;
+		// text-align: justify;
+		// color:transparent;
+		// text-shadow:0 0 0 #000;
+	}
+	.mask{
+		width: 52px;
+		height: 40px;
+		background-color: #fff;
+		position: absolute;
+		top: 0;
+		right: -28px;
+	}
+	
+	.box {
+		font-size: 0;
+		span{
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			margin-right: 20px;
+			border: 1px solid #000;
+			font-size: 16px;
+			color: #666;
+		}
+		&:last-child{
+			// display: none;
+			// border: 1px solid transparent;
+		}
+	}
 }
 
-input {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 323px;
-	height: 40px;
-	background: transparent;
-	border: none;
-	letter-spacing: 52px;
-	padding-left: 25px;
-	outline: none;
-	text-align: justify;
-	color:transparent;
-	text-shadow:0 0 0 #000;
-}
-
-.box {
-	font-size: 0;
-}
-
-.box span {
-	display: inline-block;
-	width: 40px;
-	height: 40px;
-	margin-right: 20px;
-	border: 1px solid #000;
-	font-size: 16px;
-	color: #666;
-}
-.box :last-child{
-	// border: 1px solid transparent;
-}

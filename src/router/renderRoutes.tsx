@@ -21,7 +21,10 @@ const renderRoutes = (routes: any, extraProps = {}, switchProps = {}) =>
             exact={route.exact}
             strict={route.strict}
             render={(props) => {
-              const auth = tool.getData('token');
+              const auth = tool.getData('token') || 'abc';
+              // console.log(auth, route.requiresAuth, 'pd--route.requiresAuth');
+              // console.log(route,'pd--route');
+              
               if (route.requiresAuth && !auth) {
                 return (
                   <Redirect

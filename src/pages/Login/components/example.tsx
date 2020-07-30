@@ -11,7 +11,7 @@ const initialCount = (a: number, b: number)=>{
 }
 
 function init(initialData: any) {
-	console.log(initialData, 'pd--initialData');
+	// console.log(initialData, 'pd--initialData');
 	return { num: initialData.count}
 }
 
@@ -21,7 +21,18 @@ function Example(props: Props) {
 	const [coords, setCoords] = useState({x: 0, y: 0})
 	// const [state, dispatch] = useReducer(reducer, initialState)
 	const [state, dispatch] = useReducer(reducer, initialState, init)
-	console.log(state, 'pd--state');
+	// console.log(state, 'pd--state');
+
+	const add = (a: number, b: number) => {
+		// console.log(a, b, 'pd--a,b');
+		return a + b
+	}
+
+	const memoizedAdd = useCallback(add, [])
+
+	memoizedAdd(1, 2)
+	memoizedAdd(1, 2)
+
 	
 	const handler = useCallback(({clientX, clientY})=>{
 		setCoords({
@@ -29,6 +40,12 @@ function Example(props: Props) {
 			y: clientY
 		})
 	},[])
+	// const handler = ({clientX, clientY}: any)=>{
+	// 	setCoords({
+	// 		x: clientX,
+	// 		y: clientY
+	// 	})
+	// }
 	
 	useEffect(()=>{
 		document.title = `You clicked ${count} times`
@@ -40,7 +57,7 @@ function Example(props: Props) {
 		// 模拟数据请求
 		const timer = setTimeout(()=>{
 			// setCount('mock data')
-			setOwner({name: '王五', age: 18})
+			// setOwner({name: '王五', age: 18})
 		}, 2000)
 		return ()=>{
 			clearTimeout(timer)
@@ -66,17 +83,17 @@ function Example(props: Props) {
     	  The mouse position is ({coords.x}, {coords.y})
     	</h1>
 			<h2>Num: {state.num}</h2>
-			<button onClick={() => dispatch({type: 'increment'})} style={{width: 30}}>+</button>
-			<button onClick={() => dispatch({type: 'decrement'})} style={{width: 30}}>-</button>
-			<button onClick={() => dispatch({type: 'reset', payload: initialState})} style={{width: 30}}>reset</button>
+			<button onClick={() => dispatch({type: 'increment'})} style={{padding: '10px'}}>+</button>
+			<button onClick={() => dispatch({type: 'decrement'})} style={{padding: '10px'}}>-</button>
+			<button onClick={() => dispatch({type: 'reset', payload: initialState})} style={{padding: '10px'}}>reset</button>
 			<div className={styles["warp"]} >
-        <input id='input'  maxLength={5} onChange = {e=>{
-					console.log(e.target.value,'pd--ee');
+        <input id='input' autoFocus={true}  maxLength={5} onChange = {e=>{
+					// console.log(e.target.value,'pd--ee');
 					if(e.target.value.length >= 5) {
 						e.target.value = e.target.value.slice(0, 5);
 						e.target.blur();
 						// set_text_value_position('input', 4, 4)
-						setCss('input')
+						setCss('input', 5, 5)
 						
 					}
 				}}/>
@@ -87,6 +104,7 @@ function Example(props: Props) {
           <span></span>
           <span></span>
         </div>
+				<div className={styles['mask']}></div>
       </div>
 		</div>
 	)
@@ -105,10 +123,10 @@ function setSelectionRange(input: any, selectionStart: any, selectionEnd: any) {
 	} 
 }
 
-function setCss(opt: string){
+function setCss(opt: string, selectionStart: any, selectionEnd: any){
 	var sr: any = document.getElementById(opt);
-	var len = sr.value.length;
-	setSelectionRange(sr,len,len); //将光标定位到文本最后 
+	// var len = sr.value.length;
+	setSelectionRange(sr,selectionStart,selectionStart); //将光标定位到文本最后 
 }
 
 function useEventListener(eventName: string, handler: any, el = window) {
@@ -151,4 +169,7 @@ function reducer(state: any, action: any):any {
 	}
 }
 
+
+
 export default React.memo(Example)
+

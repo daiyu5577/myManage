@@ -1,0 +1,58 @@
+@import '../../theme/default';
+
+.tim-conversation {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  &-panel {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    &-main {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      .tim-conversation-input-area {
+        position: relative;
+        // height: 140px;
+        border-top: @border-width solid #ddd;
+        border-radius: 0 0 @border-radius-lg 0;
+        padding: 0 20px;
+        // padding-top: 36px;
+      }
+      &-content {
+        position: relative;
+        flex: 1;
+        overflow-y: scroll;
+        // padding:0 20px;
+        // padding-bottom: 0;
+        // background-color: yellow;
+      }
+    }
+    &-header {
+      height: 50px;
+      border-bottom: @border-width solid @border-color;
+      flex: none;
+      padding: 0 @padding-lg;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #d1e7fd;
+      color: #2796f5;
+      font-size: 16px;
+      font-weight: 600;
+      
+    }
+  }
+  &-aside {
+    width: 30%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+  }
+}

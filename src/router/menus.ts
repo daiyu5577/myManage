@@ -31,6 +31,13 @@ const menus: menus = [
       },
     ],
   },
+  {
+    title: '在线聊天',
+    key: 'tim',
+    path: '/tim/index',
+    icon: '',
+    role: '',
+  },
 ];
 
 const breadcrumbNameMap: breadcrumbNameMap = {};

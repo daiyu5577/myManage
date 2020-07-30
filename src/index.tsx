@@ -4,6 +4,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'antd/dist/antd.css';
 import '@assets/css/base.less';
+// import {tim, TIM} from './pages/Tim/tim';
+
+// console.log(tim, 'pd--tim');
+// console.log(TIM, 'pd--TIM');
+
+
+
+// window.tim = tim
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
