@@ -45,5 +45,10 @@ jobs:
 
       - name: Install dependencies
         run: |
+          echo "开始安装依赖"
           pnpm install
-          pnpm run build
+
+      - name: build
+        run: |
+          exho "开始构建"
+          npm run build
