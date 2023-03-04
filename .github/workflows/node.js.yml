@@ -46,9 +46,8 @@ jobs:
       - name: Install dependencies
         run: |
           echo "开始安装依赖"
-          pnpm install
-
-      - name: build
-        run: |
-          exho "开始构建"
-          npm run build
+          # pnpm install
+          npm install yarn
+          yarn
+          yarn build
+          echo "～～～构建完成～～～"
