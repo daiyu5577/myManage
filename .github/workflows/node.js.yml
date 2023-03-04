@@ -48,6 +48,6 @@ jobs:
           echo "开始安装依赖"
           # pnpm install
           npm install yarn
-          yarn
+          yarn --registry https://registry.npm.taobao.org
           yarn build
           echo "～～～构建完成～～～"
